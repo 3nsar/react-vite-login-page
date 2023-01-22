@@ -20,22 +20,26 @@ function App() {
     type:"text",
     placeholder:"Username",
     errorMessage:"Username should be 3-16 and shouldn't have any special character!",
-    label:"password"
+    label:"password",
+    pattern: "^[A-Za-z0-9]{3,16}$",
+    required:true
   },
   {
     id:2,
     name:"email",
-    type:"text",
+    type:"email",
     placeholder:"Email",
     errorMessage:"It should be a valid email-address!",
-    label:"Email"
+    label:"Email",
+    required:true
   },
   {
     id:3,
     name:"birthday",
     type:"date",
     placeholder:"Birthday",
-    label:"Birthday"
+    label:"Birthday",
+    required:true
   },
   {
     id:4,
@@ -43,7 +47,9 @@ function App() {
     type:"text",
     placeholder:"Password",
     errorMessage:"Password should be 8-20 characters anc include 1 letter, 1 number and 1 special character!",
-    label:"Password"
+    label:"Password",
+    pattern:"^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]{7,19}$",
+    required:true
   },
   {
     id:5,
@@ -51,7 +57,9 @@ function App() {
     type:"text",
     placeholder:"Confrim Password",
     errorMessage:"Passwords don't match!",
-    label:"Confrim Password"
+    label:"Confrim Password",
+    pattern: values.password,
+    required:true
   }
  ]
 

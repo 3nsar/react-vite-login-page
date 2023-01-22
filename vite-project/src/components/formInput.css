@@ -16,3 +16,13 @@ label{
     font-size: 12px;
     color: gray;
 }
+
+span{
+    color: red;
+    display: none;
+}
+
+input:invalid[focused = "true"] ~ span{
+    display: block;
+    
+}
