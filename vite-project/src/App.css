@@ -5,9 +5,35 @@
 }
 
 
-.app{
+.App{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: #282828;
+  color: white;
+  font-family: fantasy;
+
+}
+
+form{
+  border: 2px solid #99FFFF;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1{
+  color: #99FFFF;
+  text-align: center;
+}
+
+button{
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #99FFFF;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  width: 100%;
 }
