@@ -5,13 +5,51 @@ import FormInput from './components/FormInput'
 
 
 function App() {
-const [values, setValues] = useState({
+ const [values, setValues] = useState({
   username:"",
   email:"",
   birthday:"",
   password:"",
   confirmPassword:"",
-})
+ })
+
+ const inputs = [
+  {
+    id:1,
+    name:"username",
+    type:"text",
+    placeholder:"Username",
+    label:"password"
+  },
+  {
+    id:2,
+    name:"email",
+    type:"text",
+    placeholder:"Email",
+    label:"Email"
+  },
+  {
+    id:3,
+    name:"birthday",
+    type:"text",
+    placeholder:"Birthday",
+    label:"Birthday"
+  },
+  {
+    id:4,
+    name:"password",
+    type:"text",
+    placeholder:"Password",
+    label:"Password"
+  },
+  {
+    id:4,
+    name:"confrimPassword",
+    type:"text",
+    placeholder:"Confrim Password",
+    label:"Confrim Password"
+  }
+ ]
 
   const handleSubmit = (e)=>{
     e.preventDefault();
