@@ -5,12 +5,18 @@ import FormInput from './components/FormInput'
 
 
 function App() {
- // const [username, setUsername] = useState("")
+const [values, setValues] = useState({
+  username:"",
+  email:"",
+  birthday:"",
+  password:"",
+  confirmPassword:"",
+})
 
   const handleSubmit = (e)=>{
     e.preventDefault();
     const data = new FormData(e.target)
-    console.log(data)
+    console.log(Object.fromEntries(data.entries()))
   }
 
   return (
