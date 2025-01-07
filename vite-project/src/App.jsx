@@ -1,95 +1,21 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useState } from 'react'
-import './App.css'
+import './App.css' 
 import FormInput from './components/FormInput'
-
+import  * as THREE from "three"
 
 function App() {
- const [values, setValues] = useState({
-  username:"",
-  email:"",
-  birthday:"",
-  password:"",
-  confirmPassword:"",
- })
 
- const inputs = [
-  {
-    id:1,
-    name:"username",
-    type:"text",
-    placeholder:"Username",
-    errorMessage:"Username should be 3-16 and shouldn't have any special character!",
-    label:"password",
-    pattern: "^[A-Za-z0-9]{3,16}$",
-    required:true
-  },
-  {
-    id:2,
-    name:"email",
-    type:"email",
-    placeholder:"Email",
-    errorMessage:"It should be a valid email-address!",
-    label:"Email",
-    required:true
-  },
-  {
-    id:3,
-    name:"birthday",
-    type:"date",
-    placeholder:"Birthday",
-    label:"Birthday",
-    required:true
-  },
-  {
-    id:4,
-    name:"password",
-    type:"text",
-    placeholder:"Password",
-    errorMessage:"Password should be 8-20 characters anc include 1 letter, 1 number and 1 special character!",
-    label:"Password",
-    pattern:"^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]{7,19}$",
-    required:true
-  },
-  {
-    id:5,
-    name:"confirmPassword",
-    type:"text",
-    placeholder:"Confrim Password",
-    errorMessage:"Passwords don't match!",
-    label:"Confrim Password",
-    pattern: values.password,
-    required:true
-  }
- ]
+  useEffect(()=>{
+    const scene = new THREE.Scene();
 
-  const handleSubmit = (e)=>{
-    e.preventDefault();
+  },[])
 
-  }
-
-  const onChange = (e)=>{
-    setValues({...values, [e.target.name]: e.target.value})
-  }
-
-  console.log(values)
-
-  return (
-    <div className="App">
-     <form onSubmit={handleSubmit}>
-      <h1>Register</h1>
-      {inputs.map((input)=>(
-        <FormInput 
-           key={input.id} {...input} 
-           value={values[input.name]} 
-           onChange={onChange}/>
-      ))}
- 
-       <button>Submit</button>
-     </form>
-     
-    </div>
-  )
+    return(
+      <div>
+        <canvas id='myThreeJsCanvas'/>
+      </div>
+    )
 }
 
 export default App
